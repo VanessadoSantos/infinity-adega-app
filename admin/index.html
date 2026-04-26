@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Painel</h1>
+
+<form id="formPedido">
+<input placeholder="Cliente">
+<input placeholder="Produto">
+<input type="number" placeholder="Valor">
+<button>Adicionar</button>
+</form>
+
+<form id="formEstoque">
+<input placeholder="Produto">
+<input type="number" placeholder="Qtd">
+<input type="number" placeholder="Custo">
+<button>Estoque</button>
+</form>
+
+<h2>Pedidos</h2>
+<table><tbody id="listaPedidos"></tbody></table>
+
+<h2>Estoque</h2>
+<table><tbody id="listaEstoque"></tbody></table>
+
+<script src="app.js"></script>
+</body>
+</html>
