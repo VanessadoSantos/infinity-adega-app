@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinity Adega - Luxo e Exclusividade</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Infinity Adega - Vinhos selecionados, entrega premium e experiência de luxo. Peça agora!">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+  <!-- BOTÃO WHATSAPP -->
+  <a href="https://wa.me/5511964995899" class="whatsapp-btn" target="_blank">
+    💬
+  </a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1>Infinity Adega</h1>
+    <nav>
+      <a href="#produtos">Produtos</a>
+      <a href="#entrega">Entrega</a>
+      <a href="#fidelidade">Fidelidade</a>
+    </nav>
+  </header>
+
+  <!-- HERO (VENDA PRINCIPAL) -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Luxo em cada taça</h2>
+      <p>Vinhos selecionados, experiência premium e entrega rápida.</p>
+      <button class="cta">Peça Agora</button>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section id="produtos" class="produtos">
+    <h2>Destaques</h2>
+
+    <div class="grid">
+
+      <div class="produto">
+        <img src="#" alt="Vinho Premium">
+        <h3>Vinho Tinto Reserva</h3>
+        <p>Elegante, encorpado e sofisticado.</p>
+        <span>R$ 129,90</span>
+        <button>Comprar</button>
+      </div>
+
+      <div class="produto">
+        <img src="#" alt="Espumante">
+        <h3>Espumante Brut</h3>
+        <p>Perfeito para celebrações.</p>
+        <span>R$ 99,90</span>
+        <button>Comprar</button>
+      </div>
+
+      <div class="produto">
+        <img src="#" alt="Combo Luxo">
+        <h3>Kit Luxo</h3>
+        <p>Seleção exclusiva + taças premium.</p>
+        <span>R$ 299,90</span>
+        <button>Comprar</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ENTREGA -->
+  <section id="entrega" class="entrega">
+    <h2>Entrega Inteligente</h2>
+
+    <div class="opcoes">
+      <div>A pé 🚶‍♂️ - Rápido e econômico</div>
+      <div>Motoboy 🛵 - Equilíbrio ideal</div>
+      <div>Carro 🚗 - Longa distância</div>
+    </div>
+  </section>
+
+  <!-- AGENDAMENTO -->
+  <section class="agendamento">
+    <h2>Agende sua entrega</h2>
+
+    <form>
+      <input type="text" placeholder="Nome" required>
+      <input type="date" required>
+      <input type="time" required>
+      <input type="text" placeholder="Endereço" required>
+      <button type="submit">Agendar</button>
+    </form>
+  </section>
+
+  <!-- FIDELIDADE -->
+  <section id="fidelidade" class="fidelidade">
+    <h2>Clube Infinity</h2>
+    <p>Ganhe pontos, descontos exclusivos e acesso a rótulos premium.</p>
+  </section>
+
+  <!-- MAPA -->
+  <section class="mapa">
+    <h2>Localização</h2>
+
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=#"
+      width="100%" 
+      height="300" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <h2>Adega de alto padrão</h2>
+    <p>Atendimento premium e vinhos selecionados.</p>
+    <button class="cta">Peça Agora</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Vanessa do Santos. Todos os direitos reservados.</p>
+
+    <div class="redes">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Blogger</a>
+      <a href="#">TikTok</a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+
+</body>
+</html>
