@@ -2,52 +2,52 @@ const WHATSAPP_NUMBER = '5511964995899';
 
 const produtos = [
   {
-    nome: 'Vinho Tinto Reserva',
-    preco: 149.9,
-    descricao: 'Notas de frutas vermelhas, taninos suaves e final persistente.',
-    teor: '13,5%',
-    safra: '2019'
+    nome: 'Lager Suprema',
+    preco: 39.9,
+    descricao: 'Cerveja leve e refrescante, perfeita para encontros e celebrações.',
+    teor: '5,0%',
+    safra: 'Edição Limitada'
   },
   {
-    nome: 'Vinho Branco Chardonnay',
-    preco: 109.9,
-    descricao: 'Aromas frescos de maçã verde e toque amanteigado.',
-    teor: '12,0%',
-    safra: '2021'
+    nome: 'Dark Ale Artesanal',
+    preco: 44.9,
+    descricao: 'Notas torradas e corpo aveludado para um sabor marcante.',
+    teor: '6,8%',
+    safra: 'Edição Especial'
   },
   {
-    nome: 'Espumante Brut',
-    preco: 159.9,
-    descricao: 'Perlage fino e a combinação perfeita para celebrações.',
-    teor: '11,5%',
-    safra: '2022'
-  },
-  {
-    nome: 'Rosé Seco',
-    preco: 119.9,
-    descricao: 'Delicado e frutado para momentos leves.',
-    teor: '12,2%',
-    safra: '2022'
-  },
-  {
-    nome: 'Vinho do Porto',
-    preco: 189.9,
-    descricao: 'Doce, encorpado e ideal para sobremesas.',
-    teor: '19,0%',
-    safra: '2015'
-  },
-  {
-    nome: 'Demi-Sec',
-    preco: 134.9,
-    descricao: 'Equilíbrio suave entre doçura e acidez.',
-    teor: '12,8%',
+    nome: 'Single Malt Highland',
+    preco: 289.9,
+    descricao: 'Elegância defumada com final persistente e sofisticado.',
+    teor: '43,0%',
     safra: '2020'
+  },
+  {
+    nome: 'Bourbon Legacy',
+    preco: 249.9,
+    descricao: 'Carvalho, mel e baunilha para uma experiência premium.',
+    teor: '45,0%',
+    safra: 'Reserva'
+  },
+  {
+    nome: 'Vodka Crystal',
+    preco: 129.9,
+    descricao: 'Pureza cristalina ideal para coquetéis e celebrações.',
+    teor: '40,0%',
+    safra: 'Premium'
+  },
+  {
+    nome: 'Vodka Limão Premium',
+    preco: 139.9,
+    descricao: 'Frescor cítrico com acabamento suave e elegante.',
+    teor: '38,0%',
+    safra: 'Edição Especial'
   }
 ];
 
 const beneficios = [
   { titulo: 'Pedido rápido', detalhe: 'Faça seu pedido direto pelo WhatsApp em segundos.' },
-  { titulo: 'Catálogo premium', detalhe: 'Produtos selecionados para qualidade e experiência gostosa.' },
+  { titulo: 'Catálogo premium', detalhe: 'Seleção de cervejas, whiskies e vodkas premium.' },
   { titulo: 'Offline disponível', detalhe: 'O app funciona como PWA, mantendo conteúdo em cache.' }
 ];
 
@@ -137,7 +137,7 @@ function inicializar() {
   });
   document.querySelector('.whatsapp-btn').addEventListener('click', event => {
     event.preventDefault();
-    abrirWhatsApp('Olá! Quero conhecer os vinhos disponíveis.');
+    abrirWhatsApp('Olá! Quero conhecer as bebidas premium disponíveis.');
   });
 
   ativarServiceWorker();

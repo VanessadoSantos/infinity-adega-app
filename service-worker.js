@@ -1,8 +1,9 @@
-const CACHE_NAME = 'infinity-adega-cache-v2';
+const CACHE_NAME = 'infinity-adega-cache-v1';
 const ASSETS_TO_CACHE = [
   'index.html',
   'style.css',
-  'app.js',
+  'script.js',
+  'produtos.js',
   'manifest.json',
   'offline.html',
   'icons/icon-192.png',
@@ -27,8 +28,11 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   const request = event.request;
+  if (request.method !== 'GET') {
+    return;
+  }
 
-  if (request.mode === 'navigate' || (request.method === 'GET' && request.headers.get('accept')?.includes('text/html'))) {
+  if (request.mode === 'navigate' || (request.headers.get('accept')?.includes('text/html'))) {
     event.respondWith(
       fetch(request)
         .then(response => {

@@ -1,11 +1,11 @@
 # Infinity Adega
 
-Aplicativo web completo para adegas aumentarem vendas com catálogo digital, pedido rápido pelo WhatsApp e suporte PWA.
+Aplicativo web completo para adegas aumentarem vendas com catálogo digital de cervejas, whiskies, vodkas e combos premium, pedido rápido pelo WhatsApp e suporte PWA.
 
 ## Recursos implementados
-- Catálogo dinâmico de vinhos com produtos reais e descrições detalhadas
-- Botões de pedido pelo WhatsApp para compra e pagamento via PIX
-- Seção de benefícios e footer para comunicação mais profissional
+- Catálogo dinâmico de bebidas premium com produtos reais e descrições detalhadas
+- Botões de pedido pelo WhatsApp com resumo de compra
+- Seção de benefícios, promoções e galeria para experiência visual de alto padrão
 - Service worker atualizado com cache e página offline (`offline.html`)
 - Manifesto PWA completo com `scope`, `orientation` e ícones
 - Painel administrativo com métricas, pedido, estoque e exclusão de itens
