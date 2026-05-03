@@ -231,6 +231,24 @@ img {
   line-height: 1.9;
 }
 
+.product-filter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.product-filter label {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.product-filter select {
+  width: auto;
+  min-width: 180px;
+}
+
 .produtos-grid,
 .beneficios-grid,
 .gallery-grid {
