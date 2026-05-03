@@ -2,55 +2,75 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Infinity Adega - experiência premium de cervejas, whiskies e vodkas, pedidos por WhatsApp e agendamento de entregas.">
   <meta name="theme-color" content="#0a0a0a">
   <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <title>Infinity Adega</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <div class="page-shell">
-    <header class="site-header">
-      <div class="brand">
+    <header class="app-header">
+      <div class="app-brand">
         <span class="brand-mark">Infinity</span>
-        <span class="brand-name">Adega</span>
+        <strong>Adega</strong>
       </div>
       <button class="nav-toggle" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
       <nav class="site-nav" aria-label="Navegação principal">
+        <a href="#hero-section">Início</a>
         <a href="#produtos">Produtos</a>
-        <a href="#encomenda">Encomendas</a>
+        <a href="#encomenda">Pedido</a>
         <a href="#fidelidade">Fidelidade</a>
-        <a href="#galeria">Galeria</a>
       </nav>
     </header>
 
-    <main>
+    <main class="app-main">
       <section class="hero" id="hero-section">
-        <div class="hero-overlay"></div>
         <div class="hero-copy">
           <span class="eyebrow">Experiência Premium</span>
-          <h1>Descubra cervejas, whiskies e vodkas selecionados.</h1>
-          <p>Catálogo de bebidas premium, pedidos por WhatsApp e entrega agendada para eventos e celebrações.</p>
+          <h1>Seu bar premium no bolso.</h1>
+          <p>Selecione bebidas premium, agende entrega e finalize seu pedido com rapidez via WhatsApp.</p>
           <div class="hero-actions">
-            <a href="#encomenda" class="button button-primary">Faça sua encomenda</a>
-            <a href="https://wa.me/5511964995899" class="button button-secondary">Atendimento via WhatsApp</a>
+            <a href="#encomenda" class="button button-primary">Fazer pedido</a>
+            <a href="https://wa.me/5511964995899" class="button button-secondary" target="_blank" rel="noreferrer">Atendimento</a>
           </div>
         </div>
+      </section>
+
+      <section class="section-highlights">
+        <article class="highlight-card card">
+          <span class="eyebrow">Pedidos</span>
+          <h2>Fluxo rápido</h2>
+          <p>Organize seus pedidos em um só lugar e receba atendimento personalizado para cada entrega.</p>
+        </article>
+        <article class="highlight-card card">
+          <span class="eyebrow">Estoque</span>
+          <h2>Seleção premium</h2>
+          <p>Produtos selecionados com cuidado para garantir qualidade, sabor e momentos memoráveis.</p>
+        </article>
+        <article class="highlight-card card">
+          <span class="eyebrow">Financeiro</span>
+          <h2>Compra inteligente</h2>
+          <p>Compare preços, veja promoções e escolha combos que entregam economia e conveniência.</p>
+        </article>
       </section>
 
       <section class="section-benefits">
         <div class="section-header">
           <span class="eyebrow">Destaques Infinity</span>
           <h2>Qualidade, atendimento e agilidade em cada entrega</h2>
-          <p>Combine estilo e conveniência com nossa seleção premium de bebidas e suporte personalizado por WhatsApp.</p>
+          <p>Combine estilo e conveniência com seleção premium de bebidas e suporte personalizado por WhatsApp.</p>
         </div>
         <div class="beneficios-grid"></div>
       </section>
@@ -61,7 +81,7 @@
           <h2>Cervejas, whiskies, vodkas e combos premium</h2>
           <p>Encontre bebidas selecionadas para festa, reunião e presentes sofisticados.</p>
         </div>
-        <div class="product-filter">
+        <div class="section-toolbar">
           <label for="categoriaFilter">Filtrar por categoria</label>
           <select id="categoriaFilter" aria-label="Filtrar produtos por categoria">
             <option value="">Todas</option>
@@ -73,7 +93,7 @@
       <section class="section-promocoes" id="promocoes">
         <div class="section-header">
           <span class="eyebrow">Promoções especiais</span>
-          <h2>Combos que entregam sabor e economia</h2>
+          <h2>Combos com sabor e economia</h2>
           <p>Ofertas pensadas para quem busca qualidade e experiência premium em cada pedido.</p>
         </div>
         <div class="promocoes-grid"></div>
@@ -82,8 +102,9 @@
       <section class="section-split" id="encomenda">
         <div class="split-copy">
           <span class="eyebrow">Encomende agora</span>
-          <h2>Encomenda personalizada com entrega agendada</h2>
-          <p>Complete seu pedido com dados de entrega, escolha a forma ideal e confirme via WhatsApp.</p>
+          <h2>Personalize seu pedido com entrega agendada</h2>
+          <p>Complete com seus dados, escolha o produto ideal e finalize pelo WhatsApp sem complicação.</p>
+
           <div class="order-summary card" id="order-summary">
             <h3>Resumo do pedido</h3>
             <p class="summary-empty">Selecione um produto para ver o resumo.</p>
@@ -97,40 +118,32 @@
         </div>
 
         <form class="order-form card" id="order-form" novalidate>
-          <div class="form-group">
-            <label for="clienteNome">Nome completo</label>
-            <input id="clienteNome" name="clienteNome" type="text" placeholder="Nome completo" required>
-          </div>
           <div class="form-row">
+            <div class="form-group">
+              <label for="clienteNome">Nome completo</label>
+              <input id="clienteNome" name="clienteNome" type="text" placeholder="Nome completo" required>
+            </div>
             <div class="form-group">
               <label for="clienteEmail">Email</label>
               <input id="clienteEmail" name="clienteEmail" type="email" placeholder="contato@exemplo.com" required>
             </div>
+          </div>
+
+          <div class="form-row">
             <div class="form-group">
               <label for="clienteWhatsApp">WhatsApp</label>
               <input id="clienteWhatsApp" name="clienteWhatsApp" type="tel" placeholder="(11) 99999-9999" required>
             </div>
-          </div>
-          <div class="form-row">
             <div class="form-group">
               <label for="clienteCep">CEP</label>
               <input id="clienteCep" name="clienteCep" type="text" placeholder="00000-000" required>
             </div>
+          </div>
+
+          <div class="form-row">
             <div class="form-group">
               <label for="clienteEndereco">Endereço</label>
               <input id="clienteEndereco" name="clienteEndereco" type="text" placeholder="Rua, número, bairro" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="produtoSelect">Produto</label>
-            <select id="produtoSelect" name="produtoSelect" required>
-              <option value="">Selecione um produto</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="quantidade">Quantidade</label>
-              <input id="quantidade" name="quantidade" type="number" min="1" value="1" required>
             </div>
             <div class="form-group">
               <label for="tipoEntrega">Tipo de entrega</label>
@@ -141,10 +154,25 @@
               </select>
             </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="produtoSelect">Produto</label>
+              <select id="produtoSelect" name="produtoSelect" required>
+                <option value="">Selecione um produto</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="quantidade">Quantidade</label>
+              <input id="quantidade" name="quantidade" type="number" min="1" value="1" required>
+            </div>
+          </div>
+
           <div class="form-group">
             <label for="dataEntrega">Data e hora da entrega</label>
             <input id="dataEntrega" name="dataEntrega" type="datetime-local" required>
           </div>
+
           <button type="submit" class="button button-primary">Enviar pedido</button>
         </form>
       </section>
@@ -152,8 +180,8 @@
       <section class="section-fidelidade" id="fidelidade">
         <div class="card loyalty-card">
           <span class="eyebrow">Programa de fidelidade</span>
-          <h2>Conquiste pontos e benefícios exclusivos</h2>
-          <p>Ganhe pontos a cada compra e troque por descontos, degustações VIP e experiências premium.</p>
+          <h2>Ganhe pontos e benefícios exclusivos</h2>
+          <p>Acumule pontos em cada pedido e troque por descontos, garrafas especiais e experiências VIP.</p>
           <ul>
             <li>100 pontos = 10% de desconto</li>
             <li>250 pontos = garrafa especial grátis</li>
@@ -164,6 +192,7 @@
             <strong>1.280</strong>
           </div>
         </div>
+
         <div class="card gallery-preview" id="galeria">
           <span class="eyebrow">Galeria premium</span>
           <h2>Experiências com cervejas, whiskies e vodkas</h2>
@@ -172,16 +201,21 @@
       </section>
     </main>
 
+    <nav class="bottom-nav" aria-label="Navegação inferior">
+      <a href="#hero-section" class="nav-item" aria-label="Ir para início">Início</a>
+      <a href="#produtos" class="nav-item" aria-label="Ir para produtos">Produtos</a>
+      <a href="#encomenda" class="nav-item" aria-label="Ir para pedido">Pedido</a>
+      <a href="#fidelidade" class="nav-item" aria-label="Ir para fidelidade">Fidelidade</a>
+    </nav>
+
     <footer class="site-footer">
       <div>
         <p>Infinity Adega © 2026</p>
-        <p>Cervejas, whiskies e vodkas premium com atendimento personalizado e entregas agendadas.</p>
+        <p>Atendimento rápido, seleção premium e entregas agendadas para sua conveniência.</p>
       </div>
       <div class="social-links">
         <a href="#" aria-label="Instagram">Instagram</a>
         <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        <a href="#" aria-label="TikTok">TikTok</a>
       </div>
     </footer>
 

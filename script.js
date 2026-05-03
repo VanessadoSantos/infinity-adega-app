@@ -3,7 +3,6 @@ const whatsappNumber = '5511964995899';
 const orderForm = document.getElementById('order-form');
 const produtoSelect = document.getElementById('produtoSelect');
 const quantidadeInput = document.getElementById('quantidade');
-const summaryCard = document.getElementById('order-summary');
 const summaryEmpty = document.querySelector('.summary-empty');
 const summaryDetails = document.querySelector('.summary-details');
 const summaryProduct = document.getElementById('summary-product');
@@ -11,7 +10,6 @@ const summaryQuantity = document.getElementById('summary-quantity');
 const summaryPrice = document.getElementById('summary-price');
 const summaryTotal = document.getElementById('summary-total');
 const heroButton = document.querySelector('.button-primary');
-const heroLink = document.querySelector('.button-secondary');
 const whatsappFloat = document.getElementById('whatsappFloat');
 const modalOverlay = document.getElementById('modalOverlay');
 const modalClose = document.getElementById('modalClose');
@@ -20,6 +18,7 @@ const modalWhatsappLink = document.getElementById('modalWhatsappLink');
 const modalCalendarLink = document.getElementById('modalCalendarLink');
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');
+const categoriaFilter = document.getElementById('categoriaFilter');
 
 let selectedProduct = null;
 
@@ -53,6 +52,14 @@ function renderBeneficios() {
   `).join('');
 }
 
+function getProdutosFiltrados() {
+  const categoria = categoriaFilter.value;
+  if (!categoria) {
+    return produtos;
+  }
+  return produtos.filter(produto => produto.categoria === categoria);
+}
+
 function renderPromocoes() {
   const container = document.querySelector('.promocoes-grid');
   const combos = produtos.filter(produto => produto.categoria === 'Combo');
@@ -81,7 +88,12 @@ function renderGaleria() {
 
 function renderProdutos() {
   const container = document.querySelector('.produtos-grid');
-  container.innerHTML = produtos.map(produto => `
+  const produtosFiltrados = getProdutosFiltrados();
+  if (!produtosFiltrados.length) {
+    container.innerHTML = '<div class="card">Nenhum produto encontrado.</div>';
+    return;
+  }
+  container.innerHTML = produtosFiltrados.map(produto => `
     <article class="product-card card" data-id="${produto.id}">
       <div class="product-image" style="background-image:url('${produto.imagem}')"></div>
       <div class="product-content">
@@ -100,6 +112,13 @@ function renderProdutos() {
 function popularProdutoSelect() {
   produtoSelect.innerHTML = '<option value="">Selecione um produto</option>' + produtos.map(produto => `
     <option value="${produto.id}">${produto.nome} - ${formatarPreco(produto.preco)}</option>
+  `).join('');
+}
+
+function popularCategoriaFilter() {
+  const categorias = [...new Set(produtos.map(produto => produto.categoria))];
+  categoriaFilter.innerHTML = '<option value="">Todas</option>' + categorias.map(categoria => `
+    <option value="${categoria}">${categoria}</option>
   `).join('');
 }
 
@@ -222,13 +241,6 @@ function handleOrderSubmit(event) {
   abrirModal('Seu pedido foi gerado com sucesso. Finalize no WhatsApp e adicione o evento ao seu calendário.', whatsappUrl, calendarUrl);
 }
 
-function handleProductSelection(event) {
-  const card = event.target.closest('.product-card');
-  if (!card) return;
-  const produtoId = card.dataset.id;
-  selecionarProduto(produtoId);
-}
-
 function handleProductButton(event) {
   const button = event.target.closest('[data-action="select"]');
   if (!button) return;
@@ -247,15 +259,17 @@ function fecharMenuMobile() {
 function iniciarSite() {
   renderBeneficios();
   renderGaleria();
-  renderProdutos();
   renderPromocoes();
   popularProdutoSelect();
+  popularCategoriaFilter();
+  renderProdutos();
   atualizarResumo();
 
   document.querySelector('.produtos-grid').addEventListener('click', handleProductButton);
   document.querySelector('.promocoes-grid').addEventListener('click', handleProductButton);
   produtoSelect.addEventListener('change', event => selecionarProduto(event.target.value));
   quantidadeInput.addEventListener('input', atualizarResumo);
+  categoriaFilter.addEventListener('change', renderProdutos);
   orderForm.addEventListener('submit', handleOrderSubmit);
   heroButton.addEventListener('click', event => { event.preventDefault(); document.getElementById('encomenda').scrollIntoView({ behavior: 'smooth' }); });
   whatsappFloat.addEventListener('click', () => abrirWhatsApp('Olá! Quero fazer um pedido premium na Infinity Adega.'));

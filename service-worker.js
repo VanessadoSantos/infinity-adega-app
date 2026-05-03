@@ -32,7 +32,7 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  if (request.mode === 'navigate' || (request.headers.get('accept')?.includes('text/html'))) {
+  if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
       fetch(request)
         .then(response => {
@@ -46,6 +46,12 @@ self.addEventListener('fetch', event => {
   }
 
   event.respondWith(
-    caches.match(request).then(cacheResponse => cacheResponse || fetch(request).catch(() => caches.match('offline.html')))
+    caches.match(request).then(cacheResponse => {
+      return cacheResponse || fetch(request).then(response => {
+        const responseClone = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(request, responseClone));
+        return response;
+      }).catch(() => caches.match('offline.html'));
+    })
   );
 });
