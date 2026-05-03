@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<title>Cliente</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliente Infinity Adega</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<input id="nome">
-<button onclick="login()">Entrar</button>
-
-<h2 id="user"></h2>
-
-<button onclick="assinar()">Assinar</button>
-
-<script src="cliente.js"></script>
+  <main class="cliente-card">
+    <h1>Cliente Infinity Adega</h1>
+    <form id="loginForm">
+      <label for="nome">Seu nome</label>
+      <input id="nome" name="nome" type="text" placeholder="Digite seu nome" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <h2 id="user"></h2>
+    <p id="status">Faça login para assinar ou enviar seu interesse.</p>
+    <div class="cliente-actions">
+      <button id="assinarBtn" type="button">Assinar</button>
+      <button id="logoutBtn" type="button" class="secondary">Sair</button>
+    </div>
+  </main>
+  <script src="cliente.js"></script>
 </body>
 </html>

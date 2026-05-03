@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Infinity Adega</title>
-
-<link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Infinity Adega - vinhos premium para pedir pelo WhatsApp">
+  <meta name="theme-color" content="#111827">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>Infinity Adega</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <a href="https://wa.me/5511964995899" class="whatsapp-btn" aria-label="Abrir WhatsApp">💬</a>
+  <header class="header">
+    <div>
+      <h1>Infinity Adega</h1>
+      <p>Vinhos selecionados para sua mesa com pedido direto pelo WhatsApp.</p>
+    </div>
+    <button id="ctaBtn" class="cta">Peça Agora</button>
+  </header>
+  <main>
+    <section class="hero">
+      <h2>Luxo em cada taça</h2>
+      <p>Selecione seu vinho favorito e finalize a compra com uma mensagem simples pelo WhatsApp.</p>
+      <div class="hero-actions">
+        <button id="ctaBtnDuplicate" class="secondary">Ver catálogo</button>
+        <a class="secondary-link" href="https://wa.me/5511964995899">Falar no WhatsApp</a>
+      </div>
+    </section>
 
-<a href="https://wa.me/5511964995899" class="whatsapp-btn">💬</a>
+    <section class="beneficios" aria-labelledby="beneficios-title">
+      <h2 id="beneficios-title">Por que escolher a Infinity Adega?</h2>
+      <div class="beneficios-grid"></div>
+    </section>
 
-<header class="header">
-  <h1>Infinity Adega</h1>
-</header>
+    <section class="produtos" aria-labelledby="produtos-title">
+      <h2 id="produtos-title">Nossos destaques</h2>
+      <div class="produtos-grid"></div>
+    </section>
+  </main>
 
-<section class="hero">
-  <h2>Luxo em cada taça</h2>
-  <button class="cta">Peça Agora</button>
-</section>
+  <footer class="footer">
+    <p>Infinity Adega · Pedido rápido pelo WhatsApp · Trabalho offline com PWA.</p>
+  </footer>
 
-<section class="produtos">
-
-<div class="produto">
-<h3>Vinho Tinto</h3>
-<span>129.90</span>
-<button onclick="comprar(this)">Comprar</button>
-<button onclick="pagarPix('Vinho Tinto',129.90)">PIX</button>
-</div>
-
-</section>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

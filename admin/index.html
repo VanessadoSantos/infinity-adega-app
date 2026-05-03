@@ -1,35 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Admin</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Admin - Infinity Adega</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <main class="painel">
+    <header class="painel-cabecalho">
+      <h1>Admin Infinity Adega</h1>
+      <p>Gerencie pedidos, estoque e visualize métricas em uma tela única.</p>
+    </header>
 
-<h1>Painel</h1>
+    <section class="stats-grid">
+      <article class="stat">
+        <span>Total de pedidos</span>
+        <strong id="totalPedidos">0</strong>
+      </article>
+      <article class="stat">
+        <span>Unidades em estoque</span>
+        <strong id="totalProdutos">0</strong>
+      </article>
+      <article class="stat">
+        <span>Valor total de pedidos</span>
+        <strong id="valorTotal">R$ 0,00</strong>
+      </article>
+    </section>
 
-<form id="formPedido">
-<input placeholder="Cliente">
-<input placeholder="Produto">
-<input type="number" placeholder="Valor">
-<button>Adicionar</button>
-</form>
+    <section class="cartao">
+      <h2>Novo pedido</h2>
+      <form id="formPedido">
+        <label>
+          Cliente
+          <input name="cliente" type="text" placeholder="Nome do cliente" required />
+        </label>
+        <label>
+          Produto
+          <input name="produto" type="text" placeholder="Produto solicitado" required />
+        </label>
+        <label>
+          Valor
+          <input name="valor" type="number" step="0.01" placeholder="Valor do pedido" required />
+        </label>
+        <button type="submit">Adicionar pedido</button>
+      </form>
+    </section>
 
-<form id="formEstoque">
-<input placeholder="Produto">
-<input type="number" placeholder="Qtd">
-<input type="number" placeholder="Custo">
-<button>Estoque</button>
-</form>
+    <section class="cartao">
+      <h2>Atualizar estoque</h2>
+      <form id="formEstoque">
+        <label>
+          Produto
+          <input name="produtoEstoque" type="text" placeholder="Nome do produto" required />
+        </label>
+        <label>
+          Quantidade
+          <input name="qtd" type="number" min="1" placeholder="Quantidade" required />
+        </label>
+        <label>
+          Custo
+          <input name="custo" type="number" step="0.01" min="0" placeholder="Custo por unidade" required />
+        </label>
+        <button type="submit">Atualizar estoque</button>
+      </form>
+    </section>
 
-<h2>Pedidos</h2>
-<table><tbody id="listaPedidos"></tbody></table>
+    <section class="cartao tabela-bloco">
+      <h2>Pedidos</h2>
+      <table>
+        <thead>
+          <tr><th>Cliente</th><th>Produto</th><th>Valor</th><th>Ações</th></tr>
+        </thead>
+        <tbody id="listaPedidos"></tbody>
+      </table>
+    </section>
 
-<h2>Estoque</h2>
-<table><tbody id="listaEstoque"></tbody></table>
+    <section class="cartao tabela-bloco">
+      <h2>Estoque</h2>
+      <table>
+        <thead>
+          <tr><th>Produto</th><th>Quantidade</th><th>Custo</th><th>Ações</th></tr>
+        </thead>
+        <tbody id="listaEstoque"></tbody>
+      </table>
+    </section>
 
-<script src="app.js"></script>
+    <section class="cartao admin-actions">
+      <button id="limparDadosBtn" type="button" class="secondary">Limpar todos os dados</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
 </body>
 </html>

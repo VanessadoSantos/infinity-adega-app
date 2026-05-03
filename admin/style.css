@@ -1,4 +1,215 @@
-body{font-family:Arial;padding:20px;}
-input{margin:5px;}
-button{background:#B8860B;color:#fff;border:none;padding:5px;}
-table{margin-top:20px;width:100%;}
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #020617;
+  --surface: #111827;
+  --surface-soft: #14203a;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --primary: #f59e0b;
+  --primary-dark: #d97706;
+  --border: rgba(148, 163, 184, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, rgba(245, 158, 11, 0.08), transparent 26%), var(--bg);
+  color: var(--text);
+  padding: 24px;
+}
+
+.painel {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.painel-cabecalho h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.painel-cabecalho p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.stats-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.stat span {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+
+.stat strong {
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.cartao {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.cartao h2 {
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #334155;
+  background: var(--surface-soft);
+  color: var(--text);
+}
+
+button {
+  width: fit-content;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: none;
+  background: var(--primary);
+  color: #111827;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button.secondary,
+.secondary-link {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+button:hover,
+.secondary-link:hover {
+  background: rgba(245, 158, 11, 0.16);
+}
+
+button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.remover-btn {
+  background: rgba(220, 38, 38, 0.12);
+  color: #f87171;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.remover-btn:hover {
+  background: rgba(220, 38, 38, 0.18);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  min-width: 600px;
+}
+
+thead th {
+  text-align: left;
+  padding: 14px 12px;
+  color: var(--text);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+tbody td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.tabela-bloco {
+  overflow-x: auto;
+}
+
+.admin-actions {
+  text-align: right;
+}
+
+.cliente-card {
+  max-width: 420px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 32px;
+  display: grid;
+  gap: 18px;
+}
+
+.cliente-card h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.cliente-card form {
+  display: grid;
+  gap: 14px;
+}
+
+.cliente-card input {
+  width: 100%;
+}
+
+.cliente-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 16px;
+  }
+
+  .painel {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  table {
+    min-width: 100%;
+  }
+}
+
