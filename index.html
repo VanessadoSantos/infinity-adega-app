@@ -2,102 +2,102 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Infinity Adega - experiência premium de cervejas, whiskies e vodkas, pedidos por WhatsApp e agendamento de entregas.">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="description" content="Infinity Adega - APP premium de cervejas, whiskies e vodkas. Pedidos via WhatsApp com entrega agendada.">
+  <meta name="theme-color" content="#1a1a1a">
   <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Infinity Adega">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  
   <title>Infinity Adega</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <div class="page-shell">
+  <div class="app-container">
+    <!-- HEADER FIXO -->
     <header class="app-header">
-      <div class="app-brand">
-        <span class="brand-mark">Infinity</span>
-        <strong>Adega</strong>
-      </div>
-      <button class="nav-toggle" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <h1 class="app-logo">∞ Infinity</h1>
+      <button class="icon-btn cart-btn" aria-label="Carrinho" title="Seu carrinho">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="badge" id="cart-count">0</span>
       </button>
-      <nav class="site-nav" aria-label="Navegação principal">
-        <a href="#hero-section">Início</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#encomenda">Pedido</a>
-        <a href="#fidelidade">Fidelidade</a>
-      </nav>
     </header>
 
+    <!-- MAIN SCROLLÁVEL -->
     <main class="app-main">
-      <section class="hero" id="hero-section">
-        <div class="hero-copy">
-          <span class="eyebrow">Experiência Premium</span>
-          <h1>Seu bar premium no bolso.</h1>
-          <p>Selecione bebidas premium, agende entrega e finalize seu pedido com rapidez via WhatsApp.</p>
-          <div class="hero-actions">
-            <a href="#encomenda" class="button button-primary">Fazer pedido</a>
-            <a href="https://wa.me/5511964995899" class="button button-secondary" target="_blank" rel="noreferrer">Atendimento</a>
-          </div>
+
+      <!-- SEÇÃO HERO -->
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h2>Seu bar premium<br>no bolso</h2>
+          <p>Bebidas selecionadas com agendamento rápido via WhatsApp</p>
+          <button class="btn btn-primary" data-action="scroll-to" data-target="#produtos">Explorar produtos</button>
         </div>
       </section>
 
-      <section class="section-highlights">
-        <article class="highlight-card card">
-          <span class="eyebrow">Pedidos</span>
-          <h2>Fluxo rápido</h2>
-          <p>Organize seus pedidos em um só lugar e receba atendimento personalizado para cada entrega.</p>
-        </article>
-        <article class="highlight-card card">
-          <span class="eyebrow">Estoque</span>
-          <h2>Seleção premium</h2>
-          <p>Produtos selecionados com cuidado para garantir qualidade, sabor e momentos memoráveis.</p>
-        </article>
-        <article class="highlight-card card">
-          <span class="eyebrow">Financeiro</span>
-          <h2>Compra inteligente</h2>
-          <p>Compare preços, veja promoções e escolha combos que entregam economia e conveniência.</p>
-        </article>
+      <!-- SEÇÃO DE DESTAQUES -->
+      <section class="features-section">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Pedido rápido</h3>
+          <p>Encomende em poucos cliques</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <h3>Seleção premium</h3>
+          <p>Bebidas selecionadas com cuidado</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚚</div>
+          <h3>Entrega ágil</h3>
+          <p>Agendada com WhatsApp</p>
+        </div>
       </section>
 
-      <section class="section-benefits">
+      <!-- SEÇÃO PRODUTOS -->
+      <section class="products-section" id="produtos">
         <div class="section-header">
-          <span class="eyebrow">Destaques Infinity</span>
-          <h2>Qualidade, atendimento e agilidade em cada entrega</h2>
-          <p>Combine estilo e conveniência com seleção premium de bebidas e suporte personalizado por WhatsApp.</p>
+          <h2>Catálogo Premium</h2>
+          <p>Cervejas, whiskies, vodkas e combos</p>
         </div>
-        <div class="beneficios-grid"></div>
+
+        <!-- Filtros -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="Cerveja">Cervejas</button>
+          <button class="filter-btn" data-filter="Whisky">Whiskies</button>
+          <button class="filter-btn" data-filter="Vodka">Vodkas</button>
+          <button class="filter-btn" data-filter="Combo">Combos</button>
+        </div>
+
+        <!-- Grid de produtos -->
+        <div class="products-grid" id="products-grid"></div>
       </section>
 
-      <section class="section-intro" id="produtos">
+      <!-- SEÇÃO PROMOÇÕES -->
+      <section class="promo-section">
         <div class="section-header">
-          <span class="eyebrow">Seleção exclusiva</span>
-          <h2>Cervejas, whiskies, vodkas e combos premium</h2>
-          <p>Encontre bebidas selecionadas para festa, reunião e presentes sofisticados.</p>
+          <h2>Combos Especiais</h2>
+          <p>Aproveite ofertas pensadas para você</p>
         </div>
-        <div class="section-toolbar">
-          <label for="categoriaFilter">Filtrar por categoria</label>
-          <select id="categoriaFilter" aria-label="Filtrar produtos por categoria">
-            <option value="">Todas</option>
-          </select>
-        </div>
-        <div class="produtos-grid"></div>
+        <div class="promo-grid" id="promo-grid"></div>
       </section>
 
-      <section class="section-promocoes" id="promocoes">
-        <div class="section-header">
-          <span class="eyebrow">Promoções especiais</span>
-          <h2>Combos com sabor e economia</h2>
-          <p>Ofertas pensadas para quem busca qualidade e experiência premium em cada pedido.</p>
-        </div>
-        <div class="promocoes-grid"></div>
-      </section>
+      <!-- ESPAÇAMENTO BOTTOM (para não ficar debaixo do bottom nav) -->
+      <div class="spacer-bottom"></div>
+    </main>
 
       <section class="section-split" id="encomenda">
         <div class="split-copy">
